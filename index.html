@@ -4,7 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Raline The Explorer 🦕</title>
+  <meta name="description" content="Learning adventure game for kids — math, reading, English, dinosaurs & more">
+  <meta name="theme-color" content="#7e57c2">
+  <link rel="manifest" href="manifest.json">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦕</text></svg>">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,10 +19,15 @@
       <div class="avatar" id="hud-avatar"></div>
       <div class="who">
         <div class="name">Raline</div>
-        <div class="title" id="hud-title">Penjelajah Kecil</div>
+        <div class="title" id="hud-title"></div>
         <div class="xpbar"><div id="hud-xpfill" style="width:0%"></div></div>
+        <div class="xpbar eggmini"><div id="hud-eggfill" style="width:0%"></div></div>
       </div>
-      <div class="lvl" id="hud-level">Lv 1</div>
+      <div class="hudbtns">
+        <div class="lvl" id="hud-level">Lv 1</div>
+        <button class="mini-btn" id="btn-lang">🇮🇩</button>
+        <button class="mini-btn" id="btn-sound">🔊</button>
+      </div>
     </div>
 
     <!-- HOME -->
@@ -28,11 +37,16 @@
         <div class="pinky" id="home-pinky"></div>
       </div>
       <h1 class="logo">Raline The Explorer</h1>
-      <p class="tagline">Petualangan belajar bersama Raline &amp; Pinky si Pachycephalosaurus 🦕💗</p>
-      <div class="bubble" id="home-bubble">Halo! Ayo main bersama aku!</div>
-      <div class="modules" id="module-grid"></div>
+      <p class="tagline" id="tagline"></p>
+      <div class="bubble" id="home-bubble"></div>
+      <div class="home-foot top">
+        <button class="small-btn gold" id="btn-daily"></button>
+        <button class="small-btn" id="btn-layout">📋</button>
+      </div>
+      <div id="map-area" class="map"></div>
       <div class="home-foot">
-        <button class="small-btn" id="btn-report">📋 Laporan Ayah &amp; Bunda</button>
+        <button class="small-btn" id="btn-stickers"></button>
+        <button class="small-btn" id="btn-report"></button>
       </div>
     </section>
 
@@ -65,21 +79,66 @@
       <div class="report" id="report-body"></div>
     </section>
 
+    <!-- STICKER BOOK -->
+    <section id="screen-stickers" class="screen">
+      <div class="play-top">
+        <button class="back-btn" id="btn-stickers-back">🏠</button>
+      </div>
+      <div class="report" id="stickers-body"></div>
+    </section>
+
   </div>
 
-  <!-- LEVEL UP OVERLAY -->
-  <div id="levelup">
+  <!-- LEVEL UP -->
+  <div id="levelup" class="overlay">
     <div class="chars">
       <div id="lvl-raline"></div>
       <div id="lvl-pinky"></div>
     </div>
-    <h2>🎉 NAIK LEVEL! 🎉</h2>
+    <h2 id="lvl-head"></h2>
     <div class="newtitle" id="lvl-title"></div>
-    <button id="btn-lvl-ok">Lanjut! 🚀</button>
+    <button class="ovl-btn" id="btn-lvl-ok"></button>
   </div>
 
+  <!-- EGG HATCH -->
+  <div id="hatch" class="overlay">
+    <h2 id="hatch-title"></h2>
+    <div class="hatchbox" id="hatch-dino"></div>
+    <div class="newtitle" id="hatch-msg"></div>
+    <button class="ovl-btn" id="btn-hatch-ok"></button>
+  </div>
+
+  <!-- REST REMINDER -->
+  <div id="rest" class="overlay soft">
+    <div class="restcard">
+      <div class="resthead" id="rest-head"></div>
+      <h2 id="rest-title"></h2>
+      <p id="rest-body"></p>
+      <div class="type-actions">
+        <button class="action-btn go" id="btn-rest-now"></button>
+        <button class="action-btn del" id="btn-rest-later"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PARENTAL GATE -->
+  <div id="gate" class="overlay soft">
+    <div class="restcard">
+      <h2 id="gate-title"></h2>
+      <p id="gate-q"></p>
+      <div class="gate-slots" id="gate-slots"></div>
+      <div class="tiles" id="gate-pad"></div>
+      <div class="type-actions">
+        <button class="action-btn del" id="btn-gate-close">✕</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="i18n.js"></script>
   <script src="data.js"></script>
   <script src="characters.js"></script>
+  <script src="skills.js"></script>
+  <script src="tracing.js"></script>
   <script src="game.js"></script>
 </body>
 </html>

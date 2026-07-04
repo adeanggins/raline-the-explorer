@@ -1,180 +1,392 @@
 /* ============================================================
-   Raline The Explorer — Quiz content (Bahasa Indonesia)
+   Raline The Explorer — Content (bilingual: id / en)
+   Every item: { emoji, id: "NAMA", en: "NAME" }
    ============================================================ */
 
 const DATA = {
 
   benda: [
-    { emoji: "🪑", name: "KURSI" },
-    { emoji: "🚪", name: "PINTU" },
-    { emoji: "🛏️", name: "KASUR" },
-    { emoji: "⏰", name: "JAM" },
-    { emoji: "📚", name: "BUKU" },
-    { emoji: "✏️", name: "PENSIL" },
-    { emoji: "🥄", name: "SENDOK" },
-    { emoji: "🍽️", name: "PIRING" },
-    { emoji: "👟", name: "SEPATU" },
-    { emoji: "🧸", name: "BONEKA" },
-    { emoji: "☂️", name: "PAYUNG" },
-    { emoji: "🪥", name: "SIKAT GIGI" },
-    { emoji: "🧼", name: "SABUN" },
-    { emoji: "💡", name: "LAMPU" },
-    { emoji: "📺", name: "TELEVISI" },
-    { emoji: "🚗", name: "MOBIL" },
-    { emoji: "🚲", name: "SEPEDA" },
-    { emoji: "⚽", name: "BOLA" },
-    { emoji: "🎒", name: "TAS" },
-    { emoji: "🧢", name: "TOPI" },
-    { emoji: "🔑", name: "KUNCI" },
-    { emoji: "🪟", name: "JENDELA" }
+    { emoji: "🪑", id: "KURSI", en: "CHAIR" },
+    { emoji: "🚪", id: "PINTU", en: "DOOR" },
+    { emoji: "🛏️", id: "KASUR", en: "BED" },
+    { emoji: "⏰", id: "JAM", en: "CLOCK" },
+    { emoji: "📚", id: "BUKU", en: "BOOK" },
+    { emoji: "✏️", id: "PENSIL", en: "PENCIL" },
+    { emoji: "🥄", id: "SENDOK", en: "SPOON" },
+    { emoji: "🍽️", id: "PIRING", en: "PLATE" },
+    { emoji: "👟", id: "SEPATU", en: "SHOES" },
+    { emoji: "🧸", id: "BONEKA", en: "DOLL" },
+    { emoji: "☂️", id: "PAYUNG", en: "UMBRELLA" },
+    { emoji: "🧼", id: "SABUN", en: "SOAP" },
+    { emoji: "💡", id: "LAMPU", en: "LAMP" },
+    { emoji: "📺", id: "TELEVISI", en: "TV" },
+    { emoji: "🚗", id: "MOBIL", en: "CAR" },
+    { emoji: "🚲", id: "SEPEDA", en: "BICYCLE" },
+    { emoji: "⚽", id: "BOLA", en: "BALL" },
+    { emoji: "🎒", id: "TAS", en: "BAG" },
+    { emoji: "🧢", id: "TOPI", en: "HAT" },
+    { emoji: "🔑", id: "KUNCI", en: "KEY" },
+    { emoji: "🪟", id: "JENDELA", en: "WINDOW" }
   ],
 
   tanaman: [
-    { emoji: "🌹", name: "MAWAR" },
-    { emoji: "🌻", name: "BUNGA MATAHARI" },
-    { emoji: "🌵", name: "KAKTUS" },
-    { emoji: "🌴", name: "POHON KELAPA" },
-    { emoji: "🌷", name: "TULIP" },
-    { emoji: "🍄", name: "JAMUR" },
-    { emoji: "🌾", name: "PADI" },
-    { emoji: "🎋", name: "BAMBU" },
-    { emoji: "🌳", name: "POHON" },
-    { emoji: "🌺", name: "KEMBANG SEPATU" },
-    { emoji: "🍀", name: "SEMANGGI" },
-    { emoji: "🌽", name: "JAGUNG" },
-    { emoji: "🥀", name: "BUNGA LAYU" },
-    { emoji: "🌿", name: "DAUN" }
+    { emoji: "🌹", id: "MAWAR", en: "ROSE" },
+    { emoji: "🌻", id: "BUNGA MATAHARI", en: "SUNFLOWER" },
+    { emoji: "🌵", id: "KAKTUS", en: "CACTUS" },
+    { emoji: "🌴", id: "POHON KELAPA", en: "PALM TREE" },
+    { emoji: "🌷", id: "TULIP", en: "TULIP" },
+    { emoji: "🍄", id: "JAMUR", en: "MUSHROOM" },
+    { emoji: "🌾", id: "PADI", en: "RICE PLANT" },
+    { emoji: "🎋", id: "BAMBU", en: "BAMBOO" },
+    { emoji: "🌳", id: "POHON", en: "TREE" },
+    { emoji: "🌺", id: "KEMBANG SEPATU", en: "HIBISCUS" },
+    { emoji: "🍀", id: "SEMANGGI", en: "CLOVER" },
+    { emoji: "🌽", id: "JAGUNG", en: "CORN" },
+    { emoji: "🌿", id: "DAUN", en: "LEAF" }
   ],
 
   buah: [
-    { emoji: "🍎", name: "APEL" },
-    { emoji: "🍌", name: "PISANG" },
-    { emoji: "🍊", name: "JERUK" },
-    { emoji: "🍉", name: "SEMANGKA" },
-    { emoji: "🍇", name: "ANGGUR" },
-    { emoji: "🍓", name: "STROBERI" },
-    { emoji: "🍍", name: "NANAS" },
-    { emoji: "🥭", name: "MANGGA" },
-    { emoji: "🥑", name: "ALPUKAT" },
-    { emoji: "🍐", name: "PIR" },
-    { emoji: "🍒", name: "CERI" },
-    { emoji: "🥥", name: "KELAPA" },
-    { emoji: "🍅", name: "TOMAT" },
-    { emoji: "🍑", name: "PERSIK" },
-    { emoji: "🥝", name: "KIWI" },
-    { emoji: "🍋", name: "LEMON" }
+    { emoji: "🍎", id: "APEL", en: "APPLE" },
+    { emoji: "🍌", id: "PISANG", en: "BANANA" },
+    { emoji: "🍊", id: "JERUK", en: "ORANGE" },
+    { emoji: "🍉", id: "SEMANGKA", en: "WATERMELON" },
+    { emoji: "🍇", id: "ANGGUR", en: "GRAPES" },
+    { emoji: "🍓", id: "STROBERI", en: "STRAWBERRY" },
+    { emoji: "🍍", id: "NANAS", en: "PINEAPPLE" },
+    { emoji: "🥭", id: "MANGGA", en: "MANGO" },
+    { emoji: "🥑", id: "ALPUKAT", en: "AVOCADO" },
+    { emoji: "🍐", id: "PIR", en: "PEAR" },
+    { emoji: "🍒", id: "CERI", en: "CHERRY" },
+    { emoji: "🥥", id: "KELAPA", en: "COCONUT" },
+    { emoji: "🍅", id: "TOMAT", en: "TOMATO" },
+    { emoji: "🍑", id: "PERSIK", en: "PEACH" },
+    { emoji: "🥝", id: "KIWI", en: "KIWI" },
+    { emoji: "🍋", id: "LEMON", en: "LEMON" }
   ],
 
   hewan: [
-    { emoji: "🐱", name: "KUCING" },
-    { emoji: "🐶", name: "ANJING" },
-    { emoji: "🐘", name: "GAJAH" },
-    { emoji: "🦁", name: "SINGA" },
-    { emoji: "🐵", name: "MONYET" },
-    { emoji: "🐦", name: "BURUNG" },
-    { emoji: "🐟", name: "IKAN" },
-    { emoji: "🐢", name: "KURA-KURA" },
-    { emoji: "🐰", name: "KELINCI" },
-    { emoji: "🦋", name: "KUPU-KUPU" },
-    { emoji: "🐴", name: "KUDA" },
-    { emoji: "🐮", name: "SAPI" },
-    { emoji: "🐔", name: "AYAM" },
-    { emoji: "🦆", name: "BEBEK" },
-    { emoji: "🐍", name: "ULAR" },
-    { emoji: "🦒", name: "JERAPAH" },
-    { emoji: "🦓", name: "ZEBRA" },
-    { emoji: "🐸", name: "KATAK" },
-    { emoji: "🦀", name: "KEPITING" },
-    { emoji: "🐝", name: "LEBAH" },
-    { emoji: "🐯", name: "HARIMAU" },
-    { emoji: "🐼", name: "PANDA" }
+    { emoji: "🐱", id: "KUCING", en: "CAT" },
+    { emoji: "🐶", id: "ANJING", en: "DOG" },
+    { emoji: "🐘", id: "GAJAH", en: "ELEPHANT" },
+    { emoji: "🦁", id: "SINGA", en: "LION" },
+    { emoji: "🐵", id: "MONYET", en: "MONKEY" },
+    { emoji: "🐦", id: "BURUNG", en: "BIRD" },
+    { emoji: "🐟", id: "IKAN", en: "FISH" },
+    { emoji: "🐢", id: "KURA-KURA", en: "TURTLE" },
+    { emoji: "🐰", id: "KELINCI", en: "RABBIT" },
+    { emoji: "🦋", id: "KUPU-KUPU", en: "BUTTERFLY" },
+    { emoji: "🐴", id: "KUDA", en: "HORSE" },
+    { emoji: "🐮", id: "SAPI", en: "COW" },
+    { emoji: "🐔", id: "AYAM", en: "CHICKEN" },
+    { emoji: "🦆", id: "BEBEK", en: "DUCK" },
+    { emoji: "🐍", id: "ULAR", en: "SNAKE" },
+    { emoji: "🦒", id: "JERAPAH", en: "GIRAFFE" },
+    { emoji: "🦓", id: "ZEBRA", en: "ZEBRA" },
+    { emoji: "🐸", id: "KATAK", en: "FROG" },
+    { emoji: "🦀", id: "KEPITING", en: "CRAB" },
+    { emoji: "🐝", id: "LEBAH", en: "BEE" },
+    { emoji: "🐯", id: "HARIMAU", en: "TIGER" },
+    { emoji: "🐼", id: "PANDA", en: "PANDA" }
   ],
 
-  /* Dinosaurs are drawn as SVG (see dinoSVG below) */
   dino: [
-    { id: "trex",       name: "TIRANOSAURUS" },
-    { id: "triceratops",name: "TRICERATOPS" },
-    { id: "stego",      name: "STEGOSAURUS" },
-    { id: "brachio",    name: "BRAKIOSAURUS" },
-    { id: "pachy",      name: "PAKISEFALOSAURUS" },
-    { id: "anky",       name: "ANKILOSAURUS" },
-    { id: "raptor",     name: "VELOCIRAPTOR" },
-    { id: "spino",      name: "SPINOSAURUS" },
-    { id: "para",       name: "PARASAUROLOFUS" },
-    { id: "ptero",      name: "PTEROSAURUS" }
+    { art: "trex",        id: "TIRANOSAURUS", en: "T-REX" },
+    { art: "triceratops", id: "TRICERATOPS", en: "TRICERATOPS" },
+    { art: "stego",       id: "STEGOSAURUS", en: "STEGOSAURUS" },
+    { art: "brachio",     id: "BRAKIOSAURUS", en: "BRACHIOSAURUS" },
+    { art: "pachy",       id: "PAKISEFALOSAURUS", en: "PACHYCEPHALOSAURUS" },
+    { art: "anky",        id: "ANKILOSAURUS", en: "ANKYLOSAURUS" },
+    { art: "raptor",      id: "VELOCIRAPTOR", en: "VELOCIRAPTOR" },
+    { art: "spino",       id: "SPINOSAURUS", en: "SPINOSAURUS" },
+    { art: "para",        id: "PARASAUROLOFUS", en: "PARASAUROLOPHUS" },
+    { art: "ptero",       id: "PTEROSAURUS", en: "PTEROSAUR" }
   ],
 
-  /* Simple words for the reading module — emoji + word to spell */
+  /* simple words for reading (tile-spelling) */
   kata: [
-    { emoji: "⚽", name: "BOLA" },
-    { emoji: "👁️", name: "MATA" },
-    { emoji: "📚", name: "BUKU" },
-    { emoji: "🥛", name: "SUSU" },
-    { emoji: "🏠", name: "RUMAH" },
-    { emoji: "🔥", name: "API" },
-    { emoji: "🍚", name: "NASI" },
-    { emoji: "🐟", name: "IKAN" },
-    { emoji: "🌙", name: "BULAN" },
-    { emoji: "⭐", name: "BINTANG" },
-    { emoji: "🌂", name: "PAYUNG" },
-    { emoji: "🦶", name: "KAKI" },
-    { emoji: "👂", name: "TELINGA" },
-    { emoji: "🍞", name: "ROTI" },
-    { emoji: "💧", name: "AIR" },
-    { emoji: "🐱", name: "KUCING" },
-    { emoji: "🚗", name: "MOBIL" },
-    { emoji: "🌸", name: "BUNGA" }
+    { emoji: "⚽", id: "BOLA", en: "BALL" },
+    { emoji: "👁️", id: "MATA", en: "EYE" },
+    { emoji: "📚", id: "BUKU", en: "BOOK" },
+    { emoji: "🥛", id: "SUSU", en: "MILK" },
+    { emoji: "🏠", id: "RUMAH", en: "HOUSE" },
+    { emoji: "🔥", id: "API", en: "FIRE" },
+    { emoji: "🍚", id: "NASI", en: "RICE" },
+    { emoji: "🐟", id: "IKAN", en: "FISH" },
+    { emoji: "🌙", id: "BULAN", en: "MOON" },
+    { emoji: "⭐", id: "BINTANG", en: "STAR" },
+    { emoji: "🦶", id: "KAKI", en: "FOOT" },
+    { emoji: "🍞", id: "ROTI", en: "BREAD" },
+    { emoji: "💧", id: "AIR", en: "WATER" },
+    { emoji: "🐱", id: "KUCING", en: "CAT" },
+    { emoji: "🚗", id: "MOBIL", en: "CAR" },
+    { emoji: "🌸", id: "BUNGA", en: "FLOWER" }
   ],
 
   bendera: [
-    { emoji: "🇮🇩", name: "INDONESIA" },
-    { emoji: "🇲🇾", name: "MALAYSIA" },
-    { emoji: "🇸🇬", name: "SINGAPURA" },
-    { emoji: "🇯🇵", name: "JEPANG" },
-    { emoji: "🇰🇷", name: "KOREA" },
-    { emoji: "🇨🇳", name: "TIONGKOK" },
-    { emoji: "🇺🇸", name: "AMERIKA" },
-    { emoji: "🇬🇧", name: "INGGRIS" },
-    { emoji: "🇫🇷", name: "PRANCIS" },
-    { emoji: "🇧🇷", name: "BRASIL" },
-    { emoji: "🇦🇺", name: "AUSTRALIA" },
-    { emoji: "🇮🇳", name: "INDIA" },
-    { emoji: "🇸🇦", name: "ARAB SAUDI" },
-    { emoji: "🇹🇭", name: "THAILAND" },
-    { emoji: "🇻🇳", name: "VIETNAM" },
-    { emoji: "🇩🇪", name: "JERMAN" },
-    { emoji: "🇮🇹", name: "ITALIA" },
-    { emoji: "🇪🇸", name: "SPANYOL" },
-    { emoji: "🇳🇱", name: "BELANDA" },
-    { emoji: "🇹🇷", name: "TURKI" }
+    { emoji: "🇮🇩", id: "INDONESIA", en: "INDONESIA" },
+    { emoji: "🇲🇾", id: "MALAYSIA", en: "MALAYSIA" },
+    { emoji: "🇸🇬", id: "SINGAPURA", en: "SINGAPORE" },
+    { emoji: "🇯🇵", id: "JEPANG", en: "JAPAN" },
+    { emoji: "🇰🇷", id: "KOREA", en: "KOREA" },
+    { emoji: "🇨🇳", id: "TIONGKOK", en: "CHINA" },
+    { emoji: "🇺🇸", id: "AMERIKA", en: "AMERICA" },
+    { emoji: "🇬🇧", id: "INGGRIS", en: "BRITAIN" },
+    { emoji: "🇫🇷", id: "PRANCIS", en: "FRANCE" },
+    { emoji: "🇧🇷", id: "BRASIL", en: "BRAZIL" },
+    { emoji: "🇦🇺", id: "AUSTRALIA", en: "AUSTRALIA" },
+    { emoji: "🇮🇳", id: "INDIA", en: "INDIA" },
+    { emoji: "🇸🇦", id: "ARAB SAUDI", en: "SAUDI ARABIA" },
+    { emoji: "🇹🇭", id: "THAILAND", en: "THAILAND" },
+    { emoji: "🇻🇳", id: "VIETNAM", en: "VIETNAM" },
+    { emoji: "🇩🇪", id: "JERMAN", en: "GERMANY" },
+    { emoji: "🇮🇹", id: "ITALIA", en: "ITALY" },
+    { emoji: "🇪🇸", id: "SPANYOL", en: "SPAIN" },
+    { emoji: "🇳🇱", id: "BELANDA", en: "NETHERLANDS" },
+    { emoji: "🇹🇷", id: "TURKI", en: "TURKEY" }
+  ],
+
+  /* ---------- English Time themed sets ---------- */
+
+  colors: [
+    { emoji: "🔴", id: "MERAH", en: "RED" },
+    { emoji: "🔵", id: "BIRU", en: "BLUE" },
+    { emoji: "🟡", id: "KUNING", en: "YELLOW" },
+    { emoji: "🟢", id: "HIJAU", en: "GREEN" },
+    { emoji: "🟠", id: "ORANYE", en: "ORANGE" },
+    { emoji: "🟣", id: "UNGU", en: "PURPLE" },
+    { emoji: "🩷", id: "MERAH MUDA", en: "PINK" },
+    { emoji: "⚫", id: "HITAM", en: "BLACK" },
+    { emoji: "⚪", id: "PUTIH", en: "WHITE" },
+    { emoji: "🟤", id: "COKELAT", en: "BROWN" }
+  ],
+
+  body: [
+    { emoji: "👁️", id: "MATA", en: "EYE" },
+    { emoji: "👂", id: "TELINGA", en: "EAR" },
+    { emoji: "👃", id: "HIDUNG", en: "NOSE" },
+    { emoji: "👄", id: "MULUT", en: "MOUTH" },
+    { emoji: "✋", id: "TANGAN", en: "HAND" },
+    { emoji: "🦶", id: "KAKI", en: "FOOT" },
+    { emoji: "🦷", id: "GIGI", en: "TOOTH" },
+    { emoji: "👅", id: "LIDAH", en: "TONGUE" }
+  ],
+
+  family: [
+    { emoji: "👩", id: "IBU", en: "MOTHER" },
+    { emoji: "👨", id: "AYAH", en: "FATHER" },
+    { emoji: "👵", id: "NENEK", en: "GRANDMA" },
+    { emoji: "👴", id: "KAKEK", en: "GRANDPA" },
+    { emoji: "👶", id: "BAYI", en: "BABY" },
+    { emoji: "👧", id: "KAKAK", en: "SISTER" },
+    { emoji: "👦", id: "ADIK", en: "BROTHER" }
+  ],
+
+  greetings: [
+    { emoji: "👋", id: "HALO", en: "HELLO" },
+    { emoji: "🌅", id: "SELAMAT PAGI", en: "GOOD MORNING" },
+    { emoji: "🌙", id: "SELAMAT MALAM", en: "GOOD NIGHT" },
+    { emoji: "🙏", id: "TERIMA KASIH", en: "THANK YOU" },
+    { emoji: "🥺", id: "TOLONG", en: "PLEASE" },
+    { emoji: "😔", id: "MAAF", en: "SORRY" },
+    { emoji: "👋", id: "SAMPAI JUMPA", en: "GOODBYE" }
+  ],
+
+  classroom: [
+    { emoji: "📚", id: "BUKU", en: "BOOK" },
+    { emoji: "✏️", id: "PENSIL", en: "PENCIL" },
+    { emoji: "🎒", id: "TAS", en: "BAG" },
+    { emoji: "✂️", id: "GUNTING", en: "SCISSORS" },
+    { emoji: "🖍️", id: "KRAYON", en: "CRAYON" },
+    { emoji: "📏", id: "PENGGARIS", en: "RULER" },
+    { emoji: "🪑", id: "KURSI", en: "CHAIR" },
+    { emoji: "🖊️", id: "PULPEN", en: "PEN" }
+  ],
+
+  /* ---------- Suku Kata (Indonesian syllable reading) ---------- */
+
+  /* two-syllable picture words: suku = the syllable split */
+  sukuWords: [
+    { emoji: "👕", id: "BAJU", suku: ["BA", "JU"] },
+    { emoji: "⚽", id: "BOLA", suku: ["BO", "LA"] },
+    { emoji: "📚", id: "BUKU", suku: ["BU", "KU"] },
+    { emoji: "👁️", id: "MATA", suku: ["MA", "TA"] },
+    { emoji: "🦷", id: "GIGI", suku: ["GI", "GI"] },
+    { emoji: "🦶", id: "KAKI", suku: ["KA", "KI"] },
+    { emoji: "🥛", id: "SUSU", suku: ["SU", "SU"] },
+    { emoji: "🍞", id: "ROTI", suku: ["RO", "TI"] },
+    { emoji: "🐮", id: "SAPI", suku: ["SA", "PI"] },
+    { emoji: "🌾", id: "PADI", suku: ["PA", "DI"] },
+    { emoji: "🧢", id: "TOPI", suku: ["TO", "PI"] },
+    { emoji: "🎲", id: "DADU", suku: ["DA", "DU"] },
+    { emoji: "🎀", id: "PITA", suku: ["PI", "TA"] },
+    { emoji: "🔥", id: "API", suku: ["A", "PI"] },
+    { emoji: "👩", id: "IBU", suku: ["I", "BU"] }
+  ],
+  sukuWords3: [
+    { emoji: "🧸", id: "BONEKA", suku: ["BO", "NE", "KA"] },
+    { emoji: "🥥", id: "KELAPA", suku: ["KE", "LA", "PA"] },
+    { emoji: "🙂", id: "KEPALA", suku: ["KE", "PA", "LA"] },
+    { emoji: "🚲", id: "SEPEDA", suku: ["SE", "PE", "DA"] },
+    { emoji: "👟", id: "SEPATU", suku: ["SE", "PA", "TU"] },
+    { emoji: "🍌", id: "PISANG", suku: ["PI", "SANG"] },
+    { emoji: "🐘", id: "GAJAH", suku: ["GA", "JAH"] }
+  ],
+
+  sentences: [
+    { emoji: "👩🍚", id: "IBU MAKAN NASI", en: "MOTHER EATS RICE" },
+    { emoji: "👦🥛", id: "ADIK MINUM SUSU", en: "BROTHER DRINKS MILK" },
+    { emoji: "👨📚", id: "AYAH BACA BUKU", en: "FATHER READS A BOOK" },
+    { emoji: "🐱🐟", id: "KUCING MAKAN IKAN", en: "THE CAT EATS FISH" },
+    { emoji: "👧⚽", id: "KAKAK MAIN BOLA", en: "SISTER PLAYS BALL" },
+    { emoji: "🐦🌳", id: "BURUNG DI POHON", en: "A BIRD IN THE TREE" },
+    { emoji: "👶😴", id: "BAYI SEDANG TIDUR", en: "THE BABY IS SLEEPING" },
+    { emoji: "🐶🏃", id: "ANJING BERLARI", en: "THE DOG IS RUNNING" }
+  ],
+
+  /* ---------- Shapes (drawn as SVG via shapeSVG) ---------- */
+  shapes: [
+    { art: "circle",    id: "LINGKARAN", en: "CIRCLE" },
+    { art: "triangle",  id: "SEGITIGA", en: "TRIANGLE" },
+    { art: "square",    id: "PERSEGI", en: "SQUARE" },
+    { art: "rectangle", id: "PERSEGI PANJANG", en: "RECTANGLE" },
+    { art: "star",      id: "BINTANG", en: "STAR" },
+    { art: "heart",     id: "HATI", en: "HEART" },
+    { art: "oval",      id: "OVAL", en: "OVAL" },
+    { art: "diamond",   id: "BELAH KETUPAT", en: "DIAMOND" },
+    { art: "pentagon",  id: "SEGILIMA", en: "PENTAGON" },
+    { art: "hexagon",   id: "SEGIENAM", en: "HEXAGON" }
+  ],
+
+  /* pools used to build ABAB / AABB / ABC patterns and odd-one-out */
+  patternPool: ["🍎", "🍌", "⭐", "❤️", "🐱", "🌸", "⚽", "🦕", "🌙", "🍓"],
+  oddGroups: [
+    { same: ["🍎", "🍌", "🍇", "🍓"], odd: "🚗" },
+    { same: ["🐱", "🐶", "🐰", "🐮"], odd: "🌻" },
+    { same: ["🚗", "🚲", "🚌", "✈️"], odd: "🍉" },
+    { same: ["🌹", "🌻", "🌷", "🌺"], odd: "🐟" },
+    { same: ["⚽", "🏀", "🎾", "⚾"], odd: "🦋" },
+    { same: ["🦕", "🦖", "🐊", "🐢"], odd: "📚" },
+    { same: ["👕", "👗", "🧢", "👟"], odd: "🍌" },
+    { same: ["🥄", "🍽️", "🥣", "🍴"], odd: "🐘" }
+  ],
+
+  /* ---------- Feelings & habits (SEL) ---------- */
+  feelings: [
+    { face: "happy",     emoji: "😊", id: "SENANG", en: "HAPPY" },
+    { face: "sad",       emoji: "😢", id: "SEDIH", en: "SAD" },
+    { face: "angry",     emoji: "😠", id: "MARAH", en: "ANGRY" },
+    { face: "scared",    emoji: "😨", id: "TAKUT", en: "SCARED" },
+    { face: "surprised", emoji: "😲", id: "KAGET", en: "SURPRISED" },
+    { face: "sleepy",    emoji: "😴", id: "NGANTUK", en: "SLEEPY" }
+  ],
+
+  habits: [
+    {
+      emoji: "🍽️",
+      qid: "Sebelum makan, apa yang kita lakukan?", qen: "Before eating, what should we do?",
+      okid: "CUCI TANGAN", oken: "WASH HANDS",
+      badid: ["LANGSUNG MAKAN", "MAIN DULU"], baden: ["EAT RIGHT AWAY", "PLAY FIRST"]
+    },
+    {
+      emoji: "🛏️",
+      qid: "Sebelum tidur, apa yang kita lakukan?", qen: "Before bed, what should we do?",
+      okid: "SIKAT GIGI", oken: "BRUSH TEETH",
+      badid: ["MAKAN PERMEN", "NONTON TV"], baden: ["EAT CANDY", "WATCH TV"]
+    },
+    {
+      emoji: "🧸",
+      qid: "Selesai bermain, mainan harus di...", qen: "After playing, toys should be...",
+      okid: "RAPIKAN", oken: "TIDIED UP",
+      badid: ["BIARKAN SAJA", "SEMBUNYIKAN"], baden: ["LEFT ALONE", "HIDDEN"]
+    },
+    {
+      emoji: "🏫",
+      qid: "Mau bicara di kelas? Kita harus...", qen: "Want to speak in class? We should...",
+      okid: "ANGKAT TANGAN", oken: "RAISE OUR HAND",
+      badid: ["BERTERIAK", "BERDIRI DI MEJA"], baden: ["SHOUT", "STAND ON THE DESK"]
+    },
+    {
+      emoji: "🎁",
+      qid: "Diberi hadiah, kita bilang...", qen: "When given a gift, we say...",
+      okid: "TERIMA KASIH", oken: "THANK YOU",
+      badid: ["TIDAK MAU", "DIAM SAJA"], baden: ["NO WAY", "NOTHING"]
+    },
+    {
+      emoji: "🗑️",
+      qid: "Sampah harus dibuang ke...", qen: "Trash goes into the...",
+      okid: "TEMPAT SAMPAH", oken: "TRASH BIN",
+      badid: ["LANTAI", "BAWAH KASUR"], baden: ["FLOOR", "UNDER THE BED"]
+    },
+    {
+      emoji: "🧒",
+      qid: "Teman ingin pinjam mainan. Kita...", qen: "A friend wants to borrow a toy. We...",
+      okid: "BERBAGI", oken: "SHARE",
+      badid: ["SEMBUNYIKAN", "LARI"], baden: ["HIDE IT", "RUN AWAY"]
+    },
+    {
+      emoji: "👩‍🏫",
+      qid: "Bertemu ibu guru, kita...", qen: "When we meet the teacher, we...",
+      okid: "MEMBERI SALAM", oken: "SAY HELLO",
+      badid: ["PURA-PURA TIDAK LIHAT", "LARI"], baden: ["PRETEND NOT TO SEE", "RUN AWAY"]
+    },
+    {
+      emoji: "🚻",
+      qid: "Banyak yang antre. Kita harus...", qen: "There is a queue. We should...",
+      okid: "MENUNGGU GILIRAN", oken: "WAIT OUR TURN",
+      badid: ["MENYEROBOT", "MENANGIS"], baden: ["CUT IN LINE", "CRY"]
+    },
+    {
+      emoji: "🤧",
+      qid: "Saat bersin, kita menutup...", qen: "When sneezing, we cover our...",
+      okid: "MULUT DAN HIDUNG", oken: "MOUTH AND NOSE",
+      badid: ["MATA", "TELINGA"], baden: ["EYES", "EARS"]
+    }
   ]
 };
 
-/* Letters used in the "read the letter" questions */
 const LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+const SYL_CONSONANTS = ["B", "C", "D", "G", "J", "K", "L", "M", "N", "P", "R", "S", "T"];
+const SYL_VOWELS = ["A", "I", "U", "E", "O"];
 
-/* Module definitions shown on the home screen */
+/* Home-screen modules (titles come from i18n: t("modules.<key>")) */
 const MODULES = [
-  { key: "math",    icon: "🔢", title: "Matematika",   sub: "Tambah & kurang" },
-  { key: "benda",   icon: "🪑", title: "Benda Sekitar", sub: "Kenali benda" },
-  { key: "tanaman", icon: "🌻", title: "Tanaman",      sub: "Kenali tanaman" },
-  { key: "buah",    icon: "🍉", title: "Buah",         sub: "Kenali buah" },
-  { key: "hewan",   icon: "🦁", title: "Hewan",        sub: "Kenali hewan" },
-  { key: "dino",    icon: "🦖", title: "Dinosaurus",   sub: "Favorit Raline!" },
-  { key: "baca",    icon: "🔤", title: "Membaca",      sub: "Huruf & kata" },
-  { key: "bendera", icon: "🌍", title: "Bendera",      sub: "Bendera negara" }
+  { key: "math",    icon: "🔢" },
+  { key: "banding", icon: "⚖️" },
+  { key: "bentuk",  icon: "🔺" },
+  { key: "benda",   icon: "🪑" },
+  { key: "tanaman", icon: "🌻" },
+  { key: "buah",    icon: "🍉" },
+  { key: "hewan",   icon: "🦁" },
+  { key: "dino",    icon: "🦖" },
+  { key: "baca",    icon: "🔤" },
+  { key: "suku",    icon: "🗣️" },
+  { key: "tulis",   icon: "✍️" },
+  { key: "english", icon: "🇬🇧" },
+  { key: "bendera", icon: "🌍" },
+  { key: "memori",  icon: "🃏" },
+  { key: "rasa",    icon: "😊" }
 ];
 
-/* Level titles as Raline grows */
-const LEVEL_TITLES = [
-  "Penjelajah Kecil", "Penjelajah Pemberani", "Sahabat Dino",
-  "Penjelajah Hebat", "Pemburu Fosil", "Ahli Dino Muda",
-  "Kapten Petualang", "Bintang Penjelajah", "Profesor Dino Cilik",
-  "Penjelajah Legendaris"
-];
+/* ---------- shape drawings ---------- */
+function shapeSVG(art, color) {
+  const c = color || "#7e57c2";
+  const inner = {
+    circle:    `<circle cx="70" cy="70" r="52" fill="${c}"/>`,
+    oval:      `<ellipse cx="70" cy="70" rx="58" ry="38" fill="${c}"/>`,
+    square:    `<rect x="20" y="20" width="100" height="100" rx="8" fill="${c}"/>`,
+    rectangle: `<rect x="8" y="38" width="124" height="64" rx="8" fill="${c}"/>`,
+    triangle:  `<path d="M70 14 L128 118 L12 118 Z" fill="${c}"/>`,
+    diamond:   `<path d="M70 10 L124 70 L70 130 L16 70 Z" fill="${c}"/>`,
+    star:      `<path d="M70 10 L84 52 L128 52 L93 78 L106 122 L70 95 L34 122 L47 78 L12 52 L56 52 Z" fill="${c}"/>`,
+    heart:     `<path d="M70 122 C20 86 12 52 34 34 C50 22 66 30 70 44 C74 30 90 22 106 34 C128 52 120 86 70 122" fill="${c}"/>`,
+    pentagon:  `<path d="M70 12 L126 55 L104 122 L36 122 L14 55 Z" fill="${c}"/>`,
+    hexagon:   `<path d="M40 18 L100 18 L130 70 L100 122 L40 122 L10 70 Z" fill="${c}"/>`
+  }[art] || "";
+  return `<svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">${inner}</svg>`;
+}
+const SHAPE_COLORS = ["#7e57c2", "#ef5350", "#42a5f5", "#66bb6a", "#ffa726", "#ec407a", "#26a69a"];
 
-/* Cute simplified dinosaur drawings.
-   Each is a 200x140 viewBox SVG string with a friendly eye. */
+/* Cute simplified dinosaur drawings (200x140 viewBox). */
 function dinoSVG(id) {
   const eye = (x, y) =>
     `<circle cx="${x}" cy="${y}" r="6" fill="#fff"/><circle cx="${x + 1.5}" cy="${y}" r="3" fill="#333"/>`;
@@ -273,3 +485,9 @@ function dinoSVG(id) {
   };
   return `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">${svgs[id] || ""}</svg>`;
 }
+
+/* Baby-dino color variants for the egg collection: hue-rotate filters */
+const DINO_VARIANTS = [
+  { hue: 0, rare: false }, { hue: 45, rare: false }, { hue: 90, rare: false },
+  { hue: 180, rare: true }, { hue: 270, rare: true }
+];

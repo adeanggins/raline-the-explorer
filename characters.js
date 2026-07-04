@@ -151,6 +151,58 @@ function ralineArms(mood) {
     <path d="M142 136 Q156 160 152 186" stroke="${SKIN}" stroke-width="14" fill="none" stroke-linecap="round"/>`;
 }
 
+/* Big Raline head with a named emotion — used by the Feelings module
+   emotions: happy | sad | angry | scared | surprised | sleepy */
+function ralineHead(emotion) {
+  const faces = {
+    happy: `
+      <path d="M84 96 Q92 86 100 96" stroke="#2b2118" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M120 96 Q128 86 136 96" stroke="#2b2118" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M92 118 Q110 140 128 118" stroke="#5d3a2e" stroke-width="6" fill="none" stroke-linecap="round"/>`,
+    sad: `
+      <circle cx="92" cy="96" r="7" fill="#2b2118"/><circle cx="128" cy="96" r="7" fill="#2b2118"/>
+      <path d="M96 128 Q110 116 124 128" stroke="#5d3a2e" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <path d="M84 108 q-4 12 2 18" stroke="#64b5f6" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M80 84 Q88 88 96 86 M124 86 Q132 88 140 84" stroke="#2b2118" stroke-width="4" fill="none" stroke-linecap="round"/>`,
+    angry: `
+      <circle cx="92" cy="98" r="7" fill="#2b2118"/><circle cx="128" cy="98" r="7" fill="#2b2118"/>
+      <path d="M80 84 L100 92 M140 84 L120 92" stroke="#2b2118" stroke-width="5" stroke-linecap="round"/>
+      <path d="M96 128 Q110 118 124 128" stroke="#5d3a2e" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <path d="M146 74 l8 -8 M150 82 l10 -4" stroke="#e53935" stroke-width="4" stroke-linecap="round"/>`,
+    scared: `
+      <circle cx="92" cy="96" r="9" fill="#fff" stroke="#2b2118" stroke-width="3"/>
+      <circle cx="92" cy="96" r="4" fill="#2b2118"/>
+      <circle cx="128" cy="96" r="9" fill="#fff" stroke="#2b2118" stroke-width="3"/>
+      <circle cx="128" cy="96" r="4" fill="#2b2118"/>
+      <ellipse cx="110" cy="126" rx="9" ry="11" fill="#5d3a2e"/>
+      <path d="M78 80 Q86 76 94 80 M126 80 Q134 76 142 80" stroke="#2b2118" stroke-width="4" fill="none" stroke-linecap="round"/>`,
+    surprised: `
+      <circle cx="92" cy="94" r="9" fill="#2b2118"/><circle cx="94" cy="91" r="3" fill="#fff"/>
+      <circle cx="128" cy="94" r="9" fill="#2b2118"/><circle cx="130" cy="91" r="3" fill="#fff"/>
+      <ellipse cx="110" cy="124" rx="10" ry="12" fill="#5d3a2e"/>
+      <path d="M82 78 Q92 72 100 78 M120 78 Q128 72 138 78" stroke="#2b2118" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <text x="150" y="66" font-size="26" font-weight="bold" fill="#7e57c2">!</text>`,
+    sleepy: `
+      <path d="M84 96 Q92 100 100 96" stroke="#2b2118" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M120 96 Q128 100 136 96" stroke="#2b2118" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <ellipse cx="110" cy="124" rx="7" ry="9" fill="#5d3a2e"/>
+      <text x="146" y="64" font-size="20" fill="#7e57c2">z</text>
+      <text x="158" y="50" font-size="26" fill="#7e57c2">Z</text>`
+  };
+  return `
+<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="46" cy="96" r="24" fill="${HAIR}"/>
+  <circle cx="174" cy="96" r="24" fill="${HAIR}"/>
+  <circle cx="46" cy="74" r="10" fill="#ffd54f"/>
+  <circle cx="174" cy="74" r="10" fill="#ffd54f"/>
+  <circle cx="110" cy="100" r="58" fill="${SKIN}"/>
+  <path d="M52 92 Q50 38 110 36 Q170 38 168 92 Q160 60 138 64 Q148 48 126 54 Q131 42 110 49 Q89 42 94 54 Q72 48 82 64 Q60 60 52 92" fill="${HAIR}"/>
+  <ellipse cx="74" cy="116" rx="9" ry="6" fill="#f8a1a1" opacity=".7"/>
+  <ellipse cx="146" cy="116" rx="9" ry="6" fill="#f8a1a1" opacity=".7"/>
+  ${faces[emotion] || faces.happy}
+</svg>`;
+}
+
 /* ---------- Pinky the pachycephalosaurus ---------- */
 
 function pinkySVG(mood = "idle") {
