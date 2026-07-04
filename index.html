@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Raline The Explorer 🦕</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦕</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+
+    <!-- HUD -->
+    <div class="hud">
+      <div class="avatar" id="hud-avatar"></div>
+      <div class="who">
+        <div class="name">Raline</div>
+        <div class="title" id="hud-title">Penjelajah Kecil</div>
+        <div class="xpbar"><div id="hud-xpfill" style="width:0%"></div></div>
+      </div>
+      <div class="lvl" id="hud-level">Lv 1</div>
+    </div>
+
+    <!-- HOME -->
+    <section id="screen-home" class="screen active">
+      <div class="hero">
+        <div class="raline" id="home-raline"></div>
+        <div class="pinky" id="home-pinky"></div>
+      </div>
+      <h1 class="logo">Raline The Explorer</h1>
+      <p class="tagline">Petualangan belajar bersama Raline &amp; Pinky si Pachycephalosaurus 🦕💗</p>
+      <div class="bubble" id="home-bubble">Halo! Ayo main bersama aku!</div>
+      <div class="modules" id="module-grid"></div>
+      <div class="home-foot">
+        <button class="small-btn" id="btn-report">📋 Laporan Ayah &amp; Bunda</button>
+      </div>
+    </section>
+
+    <!-- PLAY -->
+    <section id="screen-play" class="screen">
+      <div class="play-top">
+        <button class="back-btn" id="btn-quit">🏠</button>
+        <div class="progress-dots" id="dots"></div>
+        <div style="width:44px"></div>
+      </div>
+      <div class="stage">
+        <div class="char" id="play-raline"></div>
+        <div class="qcard" id="qcard"></div>
+        <div class="char" id="play-pinky"></div>
+      </div>
+      <div class="answers" id="answers"></div>
+      <div class="feedback" id="feedback"></div>
+    </section>
+
+    <!-- SUMMARY -->
+    <section id="screen-summary" class="screen">
+      <div class="summary-card" id="summary-card"></div>
+    </section>
+
+    <!-- REPORT -->
+    <section id="screen-report" class="screen">
+      <div class="play-top">
+        <button class="back-btn" id="btn-report-back">🏠</button>
+      </div>
+      <div class="report" id="report-body"></div>
+    </section>
+
+  </div>
+
+  <!-- LEVEL UP OVERLAY -->
+  <div id="levelup">
+    <div class="chars">
+      <div id="lvl-raline"></div>
+      <div id="lvl-pinky"></div>
+    </div>
+    <h2>🎉 NAIK LEVEL! 🎉</h2>
+    <div class="newtitle" id="lvl-title"></div>
+    <button id="btn-lvl-ok">Lanjut! 🚀</button>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="characters.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
